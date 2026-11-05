@@ -65,6 +65,15 @@ There are 22 zones built in, with US, EU, Australian and New Zealand DST rules.
 
 These pick the station based on the watch's **home city**. Match the Signal to it: a US city means WWVB, Tokyo means JJY, London means MSF, and Paris or Berlin means DCF77.
 
+## Tested devices
+
+| Device | Signal | Result |
+|---|---|---|
+| Casio G-Shock GW-M5610 | WWVB | ✅ Synced with the watch sitting next to the speaker |
+| Seiko travel alarm clock (Japanese market, JJY only) | JJY | ✅ Synced in the US, showing Eastern time with Zone set to New York |
+
+Got it working (or not) with another watch or clock? Open an issue or PR with the model, the signal and the volume you used.
+
 ## How it works
 
 Radio-controlled clocks listen on very low frequencies (40–77.5 kHz), which the Cardputer has no radio for. ClockCaster uses the built-in speaker instead: it plays a tone at **one-third** of the carrier frequency (one-fifth for DCF77), for example 20 kHz for 60 kHz signals. The speaker's voice coil also radiates the tone's harmonic at the real carrier frequency as a weak magnetic field, which the clock's ferrite antenna picks up a few centimeters away.
